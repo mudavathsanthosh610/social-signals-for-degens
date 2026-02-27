@@ -1,0 +1,65 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-trading-activity-feed-page-as-the-main-view-fetch-trading-events-from-the-backend-and-display-each-as-a-card-showing-social-handle-wallet-address-truncated-token-symbol-and-name-buy-sell-badge-color-coded-green-red-amount-price-in-usd-network-label-monad-testnet-and-relative-timestamp-each-card-must-include-an-add-to-watchlist-button-and-a-view-on-dex-button-opens-a-placeholder-external-url",
+      "featureTitle": "Build a Trading Activity Feed page as the main view. Fetch trading events from the backend and display each as a card showing: social handle, wallet address (truncated), token symbol and name, BUY/SELL badge (color-coded green/red), amount, price in USD, network label ('Monad Testnet'), and relative timestamp. Each card must include an 'Add to Watchlist' button and a 'View on DEX' button (opens a placeholder external URL).",
+      "files": [
+        "frontend/src/components/TradeEventCard.tsx",
+        "frontend/src/pages/FeedPage.tsx",
+        "frontend/src/utils/formatters.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-watchlist-page-accessible-via-a-nav-tab-display-all-tokens-saved-to-the-watchlist-fetched-from-the-backend-each-watchlist-entry-shows-token-symbol-token-name-and-a-remove-button-that-calls-the-backend-removefromwatchlist-function-show-an-empty-state-message-when-the-watchlist-is-empty",
+      "featureTitle": "Build a Watchlist page accessible via a nav tab. Display all tokens saved to the watchlist fetched from the backend. Each watchlist entry shows token symbol, token name, and a 'Remove' button that calls the backend removeFromWatchlist function. Show an empty state message when the watchlist is empty.",
+      "files": [
+        "frontend/src/components/WatchlistCard.tsx",
+        "frontend/src/pages/WatchlistPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-degen-crypto-visual-theme-throughout-the-app-near-black-dark-background-neon-green-and-magenta-pink-accent-colors-monospace-or-bold-sans-serif-typography-glowing-card-borders-and-a-terminal-inspired-grid-layout-include-a-top-navigation-bar-with-the-app-name-social-signals-and-tabs-for-feed-and-watchlist-render-the-generated-logo-asset-social-signals-logo-dim-256x256-png-from-frontend-public-assets-generated-in-the-nav-bar",
+      "featureTitle": "Apply a degen-crypto visual theme throughout the app: near-black dark background, neon green and magenta/pink accent colors, monospace or bold sans-serif typography, glowing card borders, and a terminal-inspired grid layout. Include a top navigation bar with the app name 'Social Signals' and tabs for 'Feed' and 'Watchlist'. Render the generated logo asset (social-signals-logo.dim_256x256.png) from frontend/public/assets/generated in the nav bar.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/NavBar.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

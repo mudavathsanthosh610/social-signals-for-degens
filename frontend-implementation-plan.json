@@ -1,0 +1,92 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Social Signals for Degens — Trading Activity Feed & Watchlist MVP",
+  "requirements": [
+    {
+      "id": "REQ-3",
+      "summary": "Build Trading Activity Feed page displaying trading events with action buttons",
+      "acceptanceCriteria": [
+        "Activity feed renders all mock events from the backend.",
+        "BUY badges are green, SELL badges are red.",
+        "Wallet addresses are truncated (e.g., 0x1234...abcd).",
+        "'Add to Watchlist' button calls the backend addToWatchlist function.",
+        "'View on DEX' button is present and opens an external link.",
+        "Feed is sorted newest first."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/FeedPage.tsx",
+          "operation": "create",
+          "description": "Create the Trading Activity Feed page component. Fetch trading events using backend.getAllTradeEventsSorted() and render each event as a card. Display social handle, truncated wallet address (first 6 and last 4 chars), token symbol and name, BUY/SELL badge (green for BUY, red for SELL), amount, price in USD, network label, and relative timestamp. Include 'Add to Watchlist' button that calls backend.addToWatchlist with a placeholder userId and 'View on DEX' button opening a placeholder external URL. Sort events by timestamp descending."
+        },
+        {
+          "path": "frontend/src/components/TradeEventCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable TradeEventCard component accepting a TradeEvent prop. Display all event fields with styled badges, truncated wallet address, and action buttons. Style with glowing borders and degen theme colors. Use neon green for BUY badges and red/magenta for SELL badges."
+        },
+        {
+          "path": "frontend/src/utils/formatters.ts",
+          "operation": "create",
+          "description": "Create utility functions for truncating wallet addresses (0x1234...abcd format) and formatting relative timestamps (e.g., '2 hours ago', '1 day ago'). Export truncateAddress and formatRelativeTime functions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build Watchlist page displaying saved tokens with remove functionality",
+      "acceptanceCriteria": [
+        "Watchlist page fetches and displays all saved tokens.",
+        "Remove button removes the token from the backend and updates the UI.",
+        "Empty state message is shown when no tokens are saved.",
+        "Adding a token from the feed appears in the watchlist when navigating to the Watchlist page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/WatchlistPage.tsx",
+          "operation": "create",
+          "description": "Create the Watchlist page component. Fetch watchlist tokens using backend.getWatchlist with a placeholder userId. Display each token with symbol, name, and a 'Remove' button that calls backend.removeFromWatchlist and refreshes the list. Show an empty state message ('Your watchlist is empty. Add tokens from the feed!') when the watchlist array is empty. Style cards with glowing borders and degen theme."
+        },
+        {
+          "path": "frontend/src/components/WatchlistCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable WatchlistCard component accepting token symbol, token name, and an onRemove callback prop. Display token information and a remove button styled with neon accents. Apply glowing card border styling."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply degen-crypto visual theme and create navigation layout with logo",
+      "acceptanceCriteria": [
+        "App uses a near-black dark background throughout.",
+        "Neon green and magenta accent colors are applied consistently.",
+        "Typography uses monospace or bold sans-serif fonts.",
+        "Top nav bar displays app name, logo, and two navigation tabs: Feed and Watchlist.",
+        "Cards have glowing or highlighted styled borders.",
+        "Design is visually cohesive across both pages."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define degen-crypto theme CSS custom properties: near-black background (#0a0a0a or similar), neon green primary (#00ff88 or similar), magenta/pink accent (#ff00ff or similar), and monospace/bold sans-serif font families. Add global styles for body background, text color, and card glow effects using box-shadow with neon colors. Set base typography to monospace or bold sans-serif."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom degen-crypto colors: near-black background, neon green primary, magenta accent. Add custom font families for monospace and bold sans-serif. Configure glow utilities for card borders using box-shadow."
+        },
+        {
+          "path": "frontend/src/components/NavBar.tsx",
+          "operation": "create",
+          "description": "Create a NavBar component displaying the app name 'Social Signals', the generated logo from frontend/public/assets/generated/social-signals-logo.dim_256x256.png, and navigation tabs for 'Feed' and 'Watchlist'. Use React Router NavLink for active tab styling. Style with near-black background and neon accent colors. Render logo as an img element with appropriate sizing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Integrate NavBar component at the top of the app layout. Set up React Router with routes for FeedPage at '/' and WatchlistPage at '/watchlist'. Wrap the app in a dark-themed container using the degen-crypto color scheme. Ensure the layout is cohesive with the NavBar and page content."
+        }
+      ]
+    }
+  ]
+}

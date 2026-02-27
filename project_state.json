@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Social Signals for Degens: a crypto social trading app (React + Motoko) that turns a Farcaster network into an alpha feed. Core features include wallet connection, live feed of token trading activity from social graph wallets, in-app notifications for trusted contact trades on Monad Testnet, and action buttons (View on DEX, Add to Watchlist, Copy Trade). Currently scoping down to trading activity feed and watchlist first.",
+  "architectural_notes": [
+    "Frontend: React; Backend/canister logic: Motoko (ICP)",
+    "Integrates with Farcaster social graph for contact discovery",
+    "Targets Monad Testnet for on-chain trade activity"
+  ],
+  "known_issues": [
+    "Initial full build failed; scoping down to trading activity feed and watchlist first"
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Neon degen-style logo mark with a signal/waveform motif in green and magenta on a near-black background (social-signals-logo.dim_256x256.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-trading-activity-feed-page-as-the-main-view-fetch-trading-events-from-the-backend-and-display-each-as-a-card-showing-social-handle-wallet-address-truncated-token-symbol-and-name-buy-sell-badge-color-coded-green-red-amount-price-in-usd-network-label-monad-testnet-and-relative-timestamp-each-card-must-include-an-add-to-watchlist-button-and-a-view-on-dex-button-opens-a-placeholder-external-url",
+      "title": "Build a Trading Activity Feed page as the main view. Fetch trading events from the backend and display each as a card showing: social handle, wallet address (truncated), token symbol and name, BUY/SELL badge (color-coded green/red), amount, price in USD, network label ('Monad Testnet'), and relative timestamp. Each card must include an 'Add to Watchlist' button and a 'View on DEX' button (opens a placeholder external URL).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-watchlist-page-accessible-via-a-nav-tab-display-all-tokens-saved-to-the-watchlist-fetched-from-the-backend-each-watchlist-entry-shows-token-symbol-token-name-and-a-remove-button-that-calls-the-backend-removefromwatchlist-function-show-an-empty-state-message-when-the-watchlist-is-empty",
+      "title": "Build a Watchlist page accessible via a nav tab. Display all tokens saved to the watchlist fetched from the backend. Each watchlist entry shows token symbol, token name, and a 'Remove' button that calls the backend removeFromWatchlist function. Show an empty state message when the watchlist is empty.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-degen-crypto-visual-theme-throughout-the-app-near-black-dark-background-neon-green-and-magenta-pink-accent-colors-monospace-or-bold-sans-serif-typography-glowing-card-borders-and-a-terminal-inspired-grid-layout-include-a-top-navigation-bar-with-the-app-name-social-signals-and-tabs-for-feed-and-watchlist-render-the-generated-logo-asset-social-signals-logo-dim-256x256-png-from-frontend-public-assets-generated-in-the-nav-bar",
+      "title": "Apply a degen-crypto visual theme throughout the app: near-black dark background, neon green and magenta/pink accent colors, monospace or bold sans-serif typography, glowing card borders, and a terminal-inspired grid layout. Include a top navigation bar with the app name 'Social Signals' and tabs for 'Feed' and 'Watchlist'. Render the generated logo asset (social-signals-logo.dim_256x256.png) from frontend/public/assets/generated in the nav bar.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Wallet connection",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Live trading activity feed from Farcaster social graph wallets on Monad Testnet",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Watchlist feature to save/track tokens",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "In-app notifications when trusted contacts make trades",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Action buttons: View on DEX, Add to Watchlist, Copy Trade",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create a backend actor that stores a list of mock trading activity events, each with fields: walletAddress (Text), tokenSymbol (Text), tokenName (Text), action (Text: 'BUY' or 'SELL'), amount (Float), priceUSD (Float), network (Text: 'Monad Testnet'), timestamp (Int), and socialHandle (Text). Pre-populate with at least 8 realistic mock entries. Expose a query function to return all events sorted by timestamp descending.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Create a backend actor capability to manage a user watchlist: a list of tokens identified by tokenSymbol (Text) and tokenName (Text). Expose update functions to add a token to the watchlist and remove a token from the watchlist, and a query function to retrieve the current watchlist. Prevent duplicate entries by tokenSymbol.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Social Signals for Degens",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

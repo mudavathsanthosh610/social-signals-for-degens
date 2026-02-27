@@ -1,0 +1,68 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T16:29:52.194Z",
+  "summary": "The diff implements all five requirements with reasonable fidelity. REQ-1 and REQ-2 are covered by the Motoko backend actor with mock data, watchlist CRUD, and duplicate prevention. REQ-3 and REQ-4 are covered by the React frontend pages and components. REQ-5 is covered by the degen-crypto theme, NavBar with logo rendering, and typography. One notable gap: the logo image asset file itself is not present in the diff, only referenced. Additionally, mock wallet addresses are very short and the truncation utility may not produce the expected 0x1234...abcd format for them.",
+  "missing_requirements": [
+    {
+      "requirement": "The generated logo image asset (social-signals-logo.dim_256x256.png) must be present at frontend/public/assets/generated",
+      "reason": "No image file is listed in the added files. The NavBar references '/assets/generated/social-signals-logo.dim_256x256.png' but the actual PNG asset is not present in the diff, so the image would fail to load in the browser.",
+      "evidence": [
+        "frontend/src/components/NavBar.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Stats bar on the Feed page showing counts of BUYs, SELLs, and unique tokens",
+      "reason": "The build request does not mention a stats bar or summary counts on the Feed page. This is an additional feature not requested.",
+      "evidence": [
+        "frontend/src/pages/FeedPage.tsx"
+      ]
+    },
+    {
+      "description": "Live indicator badge ('LIVE') in the navigation bar",
+      "reason": "The build request specifies a top nav bar with the app name, logo, and two tabs only. A live status indicator was not requested.",
+      "evidence": [
+        "frontend/src/components/NavBar.tsx"
+      ]
+    },
+    {
+      "description": "caffeine.ai attribution footer with external link",
+      "reason": "No footer or caffeine.ai attribution was requested in the build requirements.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "Multi-user watchlist keyed by userId in the backend",
+      "reason": "REQ-2 specifies a single watchlist with no mention of multi-user support or userId-scoped watchlists. The backend uses a per-userId Map which adds unspecified complexity beyond the requirement.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/NavBar.tsx",
+    "frontend/src/components/TradeEventCard.tsx",
+    "frontend/src/components/WatchlistCard.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/FeedPage.tsx",
+    "frontend/src/pages/WatchlistPage.tsx",
+    "frontend/src/utils/formatters.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

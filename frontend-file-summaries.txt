@@ -1,0 +1,12 @@
+{
+  "frontend/src/index.css": "Global styles with degen-crypto dark theme using OKLCH color tokens — near-black background, neon green primary, magenta accent, Space Grotesk/Space Mono fonts, glow utilities, and scanline effect.",
+  "frontend/tailwind.config.js": "Tailwind config extended with Space Grotesk/Mono fonts, neon/degen color tokens, glow box-shadow utilities, and slide-in/pulse-glow animations.",
+  "frontend/src/utils/formatters.ts": "Utility functions for truncating wallet addresses, formatting relative timestamps (handles bigint nanoseconds and ms numbers), USD prices, and token amounts.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations — fetching trade events, watchlist CRUD (add/remove/get) — all using a placeholder userId constant.",
+  "frontend/src/components/NavBar.tsx": "Sticky top navigation bar with logo, brand name, live indicator, and Feed/Watchlist nav links with active state styling using TanStack Router.",
+  "frontend/src/components/TradeEventCard.tsx": "Reusable card component for a single trade event showing social handle, truncated wallet, token info, BUY/SELL badge, amount, price, network, timestamp, and Add to Watchlist / View on DEX action buttons.",
+  "frontend/src/components/WatchlistCard.tsx": "Reusable card for a watchlist token entry showing symbol, name, WATCHING badge, and a Remove button with loading state.",
+  "frontend/src/pages/FeedPage.tsx": "Trading activity feed page with stats bar (buy/sell/token counts), skeleton loading, error state, and a list of TradeEventCard components sorted newest first.",
+  "frontend/src/pages/WatchlistPage.tsx": "Watchlist page showing saved tokens via WatchlistCard components, with skeleton loading, error state, empty state with link to feed, and remove functionality.",
+  "frontend/src/App.tsx": "Root app component with TanStack Router setup — RootLayout with NavBar, Outlet, footer with caffeine.ai attribution, and routes for FeedPage (/) and WatchlistPage (/watchlist)."
+}

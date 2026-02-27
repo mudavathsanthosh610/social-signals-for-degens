@@ -1,0 +1,21 @@
+{
+  "backend/main.mo": "Motoko actor defining TradeEvent and Token types, a hardcoded list of mock trade events, and query/update functions for fetching sorted events and managing per-user token watchlists stored in a mutable Map.",
+  "feature_evidence.json": "Feature evidence report mapping three implemented features (trading feed, watchlist page, degen theme/nav) to their source files, component dependencies, and test IDs with high confidence.",
+  "frontend-file-summaries.txt": "JSON document containing one-sentence summaries for each frontend source file, serving as a quick reference for the purpose of every component, hook, page, and utility in the project.",
+  "frontend/index.css": "Tailwind base stylesheet defining OKLCH-based CSS custom properties for light and dark color themes including background, foreground, primary, accent, and chart colors.",
+  "frontend/index.html": "Minimal HTML entry point titled 'Social Signals for Degens' that mounts the React app via a root div and loads the main TSX module.",
+  "frontend/src/App.tsx": "Root React component that sets up TanStack Router with a RootLayout (NavBar, Outlet, footer) and defines routes for FeedPage (/) and WatchlistPage (/watchlist).",
+  "frontend/src/components/NavBar.tsx": "Sticky top navigation bar displaying the logo, brand name, a live pulse indicator, and Feed/Watchlist links with active-state neon styling using TanStack Router.",
+  "frontend/src/components/TradeEventCard.tsx": "Card component rendering a single trade event with social handle, truncated wallet, token info, color-coded BUY/SELL badge, price, network, timestamp, and Add to Watchlist / View on DEX buttons.",
+  "frontend/src/components/WatchlistCard.tsx": "Card component for a watchlist token entry displaying symbol, name, a WATCHING badge, and a Remove button with disabled/loading state.",
+  "frontend/src/hooks/useActor.ts": "Provides a `useActor` hook that creates and caches an ICP backend actor (anonymous or authenticated) using React Query, and invalidates dependent queries whenever the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements Internet Identity authentication via a React context provider and `useInternetIdentity` hook, exposing login/logout functions, identity state, and login status.",
+  "frontend/src/hooks/useQueries.ts": "Defines React Query hooks for fetching trade events and watchlist data, plus mutations for adding/removing watchlist tokens, all delegating to the backend actor.",
+  "frontend/src/index.css": "Global stylesheet that imports fonts, configures a dark degen-themed design system with OKLCH CSS variables, and defines utility classes for neon glows and card styles.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app wrapped with `QueryClientProvider` and `InternetIdentityProvider`.",
+  "frontend/src/pages/FeedPage.tsx": "Renders the Alpha Feed page showing a list of trade event cards with loading skeletons, error state, a refresh button, and a summary stats bar for buys/sells/tokens.",
+  "frontend/src/pages/WatchlistPage.tsx": "Renders the Watchlist page displaying tracked tokens with loading skeletons, error handling, and the ability to remove tokens, with an empty-state prompt linking to the feed.",
+  "frontend/src/utils/formatters.ts": "Utility functions for formatting wallet addresses (truncation), timestamps (relative time), USD prices, and token amounts.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration for the frontend, extending the default theme with custom fonts (Space Grotesk/Mono), oklch-based color tokens (neon green/magenta, degen dark palette), glow box shadows, and animation keyframes. Enables dark mode, typography, container queries, and animate plugins.",
+  "project_state.json": "Project state document (version 3) describing a crypto social trading app ('Social Signals') built with React and Motoko, tracking existing features (trading feed, watchlist, degen theme) and pending feature requests (wallet connection, live Farcaster feed, notifications, copy trade). Also records architectural notes, known issues, and image asset requirements."
+}
