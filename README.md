@@ -173,3 +173,11 @@ supabase
 vercel
 defi
 wallet-tracker
+
+📸 Screenshots
+<img width="1919" height="963" alt="Screenshot 2026-02-27 222632" src="https://github.com/user-attachments/assets/1f8fe233-cd60-48ca-9df1-41ea096260ca" />
+<img width="1919" height="959" alt="Screenshot 2026-02-27 222653" src="https://github.com/user-attachments/assets/2dceb8bc-a28f-4cd8-985e-30c50548cd12" />
+<img width="1919" height="950" alt="Screenshot 2026-02-27 222714" src="https://github.com/user-attachments/assets/898175c5-6ff5-49db-a280-b92384df83cb" />
+
+
+
