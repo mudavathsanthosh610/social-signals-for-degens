@@ -146,7 +146,7 @@ Advanced filtering and dashboards
 👨‍💻 Author
 
 Mudavath Santhosh
-AI & Web3 Developer
+AI DEVELOPER
 
 GitHub:
 https://github.com/mudavathsanthosh610
